@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  createvm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - OCI_CONFIG_FILE=/.oci/config
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config.toml:/config.toml
+      - ./.oci:/.oci
+    labels:
+      - "traefik.enable=false"
+      - "com.centurylinklabs.watchtower.enable=false"
+    container_name: createVm

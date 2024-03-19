@@ -1,0 +1,24 @@
+[general]
+availabilityDomain = "<OCI Availability Domain>"
+compartment = "<OCI Compartment>"
+sshKey = "<SSH key>"
+instanceName = "<instance name>"
+schedule = "0 */5 * * * *" # Every 5 minutes
+
+[instance]
+shape =  "VM.Standard.A1.Flex"
+memory = 12.0
+cpus = 2.0
+image = "Canonical-Ubuntu-22.04-Minimal-aarch64-2024.01.07-0"
+
+[network]
+vcnName = "vcnName"
+subnetName = "public subnet-vcnName"
+	
+[notification]
+from = "<from@example.com>"
+to = "<to@example.com>"
+server = "<smtp.server.com>"
+port = 587
+username = "<username>"
+password = "<password>"
